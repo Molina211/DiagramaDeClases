@@ -51,4 +51,4 @@ Sistema --> Usuario: Confirmación de compra y detalles de orden
 ```
 
 ## Resultado
-![Imagen del resultado](img/DiagramaDeSecuencia.png)
+![Imagen del resultado](Img/DiagramaDeSecuancia.png)
