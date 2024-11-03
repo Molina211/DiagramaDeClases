@@ -1,0 +1,30 @@
+@startuml
+object Usuario
+object Carrito
+object Producto
+object Orden
+object MetodoDePago
+object Inventario
+object Notificacion
+
+Usuario --> Carrito : "agregarProducto()"
+Usuario --> Carrito : "verCarrito()"
+Usuario --> Carrito : "eliminarProducto()"
+Usuario --> Carrito : "vaciarCarrito()"
+
+Carrito --> Producto : "contiene"
+
+Usuario --> Orden : "realizarCompra()"
+
+Orden --> Producto : "verificarDisponibilidad()"
+Orden --> Producto : "confirmarOrden()"
+
+Orden --> MetodoDePago : "procesarPago()"
+
+MetodoDePago --> Notificacion : "enviarConfirmacion()"
+
+Orden --> Inventario : "actualizarInventario()"
+Inventario --> Producto : "disminuirStock()"
+
+Notificacion --> Usuario : "enviarNotificacion()"
+@enduml
