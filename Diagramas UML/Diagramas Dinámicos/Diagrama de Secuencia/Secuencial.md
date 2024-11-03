@@ -15,8 +15,11 @@ Un **Diagrama de Secuencia** es un tipo de diagrama de UML que representa la sec
 
 Los Diagramas de Secuencia son útiles para:
 
-1. **Describir Casos de Uso Específicos**: Detallan cómo se ejecuta un proceso específico.
-2. **Identificar Responsabilidades de los Componentes**: Ayudan a visualizar qué acciones realiza cada componente o clase.
-3. **Facilitar el Diseño Orientado a Objetos**: Describen cómo las instancias de clases se comunican, apoyando la programación y asignación de responsabilidades.
-4. **Visualizar el Flujo de Información**: Muestran el flujo de datos entre los módulos de un sistema.
-5. **Optimización del Sistema**: Permiten detectar puntos de mejora en el flujo de información.
+- **Describir Casos de Uso Específicos**: Detallan cómo se ejecuta un proceso específico.
+- **Identificar Responsabilidades de los Componentes**: Ayudan a visualizar qué acciones realiza cada componente o clase.
+- **Facilitar el Diseño Orientado a Objetos**: Describen cómo las instancias de clases se comunican, apoyando la programación y asignación de responsabilidades.
+- **Visualizar el Flujo de Información**: Muestran el flujo de datos entre los módulos de un sistema.
+- **Optimización del Sistema**: Permiten detectar puntos de mejora en el flujo de información.
+
+## Codigo del diagrama
+```planuml
