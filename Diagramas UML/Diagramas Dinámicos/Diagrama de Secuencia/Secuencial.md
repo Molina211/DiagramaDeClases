@@ -23,3 +23,32 @@ Los Diagramas de Secuencia son útiles para:
 
 ## Codigo del diagrama
 ```planuml
+@startuml
+actor Usuario
+participant "Sistema de Carrito" as Sistema
+
+
+Usuario -> Sistema: Iniciar sesión
+Sistema --> Usuario: Confirmación de inicio de sesión
+
+
+Usuario -> Sistema: Buscar producto
+Sistema --> Usuario: Mostrar resultados de la búsqueda
+
+
+Usuario -> Sistema: Agregar producto al carrito
+Sistema --> Usuario: Confirmación de agregado al carrito
+
+
+Usuario -> Sistema: Ver carrito
+Sistema --> Usuario: Muestra contenido del carrito
+
+
+Usuario -> Sistema: Comprar productos en el carrito
+Sistema --> Usuario: Confirmación de compra y detalles de orden
+
+@enduml
+```
+
+## Resultado
+![Imagen del resultado](img/Diagrama-de-Secuancia.png)
