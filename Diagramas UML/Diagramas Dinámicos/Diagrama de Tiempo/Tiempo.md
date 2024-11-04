@@ -6,25 +6,19 @@ Un **Diagrama de Tiempo** es un tipo de diagrama UML que representa el cambio de
 
 ## Elementos del Diagrama de Tiempo
 
-- **Objetos**: Entidades en el sistema cuyos estados cambian con el tiempo. En este caso, tenemos:
+- **Participantes**: Entidades en el sistema cuyos estados cambian con el tiempo. En este caso, tenemos:
   - **Usuario**: Representa al cliente que interactúa con el sistema.
   - **Carrito**: Representa el carrito de compras que contiene los productos seleccionados por el usuario.
   - **Producto**: Representa los artículos que están disponibles para la compra.
   - **Orden**: Representa el estado de la compra una vez que el usuario ha realizado su selección.
 
-- **Estados**: Indican las diferentes condiciones que puede tener cada objeto en momentos específicos:
-  - "No autenticado": El usuario no ha iniciado sesión.
-  - "Autenticado": El usuario ha iniciado sesión con éxito.
-  - "Vacío": El carrito no contiene productos.
-  - "Contiene 0 productos": El carrito está preparado pero no tiene productos añadidos.
-  - "Contiene 1 producto": El carrito tiene un producto añadido.
-  - "Agregado al Carrito": Indica que un producto ha sido añadido.
-  - "Creada": Indica que la orden de compra ha sido creada.
-  - "En proceso de pago": Indica que la orden está en la fase de pago.
-  - "Pagada": La orden ha sido pagada con éxito.
-  - "Sin stock": El producto ya no está disponible.
-  - "Enviada": La orden ha sido enviada al usuario.
-  - "Entregada": La orden ha sido entregada al usuario.
+- **Interacciones**: Indican las diferentes acciones que pueden realizar los participantes y los estados que pueden tener:
+  - "Iniciar sesión"
+  - "Agregar Producto"
+  - "Crear orden"
+  - "Confirmar pago"
+  - "Enviar orden"
+  - "Recibir orden"
 
 ## Propósito del Diagrama de Tiempo
 
@@ -35,6 +29,7 @@ El Diagrama de Tiempo es útil para:
 3. **Facilitar el Análisis de Procesos**: Ayuda a identificar problemas potenciales en el flujo del sistema y optimizar los procesos involucrados.
 
 Este diagrama de tiempo ilustra claramente cómo los estados del usuario, carrito, producto y orden cambian a lo largo de una secuencia temporal en el sistema de carrito de compras.
+
 
 
 ## Codigo del diagrama
