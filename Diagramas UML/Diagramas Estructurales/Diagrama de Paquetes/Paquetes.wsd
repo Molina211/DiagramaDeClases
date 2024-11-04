@@ -1,0 +1,40 @@
+@startuml
+title Diagrama de Paquetes - Carrito de Compras
+
+package "Carrito de Compras" {
+    package "Modelo" {
+        [Producto] <<class>>
+        [Usuario] <<class>>
+        [Orden] <<class>>
+    }
+
+    package "Controlador" {
+        [Controlador de Producto] <<class>>
+        [Controlador de Usuario] <<class>>
+        [Controlador de Orden] <<class>>
+    }
+
+    package "Vista" {
+        [Vista de Productos] <<class>>
+        [Vista de Usuario] <<class>>
+        [Vista de Orden] <<class>>
+    }
+
+    package "Servicios" {
+        [Servicio de Autenticación] <<class>>
+        [Servicio de Pagos] <<class>>
+    }
+}
+
+[Controlador de Producto] --> [Vista de Productos] : controla >
+[Controlador de Usuario] --> [Vista de Usuario] : controla >
+[Controlador de Orden] --> [Vista de Orden] : controla >
+
+[Controlador de Producto] --> [Producto] : utiliza >
+[Controlador de Usuario] --> [Usuario] : utiliza >
+[Controlador de Orden] --> [Orden] : utiliza >
+
+[Servicio de Autenticación] --> [Usuario] : verifica >
+[Servicio de Pagos] --> [Orden] : procesa >
+
+@enduml
