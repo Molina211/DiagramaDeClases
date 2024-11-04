@@ -1,0 +1,29 @@
+@startuml
+title Diagrama de Despliegue - Carrito de Compras
+
+node "Servidor Web" {
+    artifact "Frontend" <<artifact>> 
+}
+
+node "Servidor de Aplicaciones" {
+    artifact "Backend" <<artifact>> 
+    artifact "Biblioteca de Autenticación" <<artifact>> 
+    artifact "Biblioteca de Procesamiento de Pagos" <<artifact>> 
+}
+
+node "Servidor de Base de Datos" {
+    artifact "Base de Datos" <<artifact>> 
+}
+
+node "Dispositivo del Usuario" {
+    artifact "Interfaz de Usuario" <<artifact>> 
+}
+
+"Interfaz de Usuario" --> "Frontend" : interactúa >
+"Frontend" --> "Backend" : solicita datos >
+"Backend" --> "Base de Datos" : consulta datos >
+
+"Biblioteca de Autenticación" --> "API de Autenticación" : utiliza >
+"Biblioteca de Procesamiento de Pagos" --> "API de Pagos" : utiliza >
+
+@enduml
