@@ -1,0 +1,32 @@
+@startuml
+|Usuario|
+start
+:Iniciar sesión;
+:Buscar producto;
+
+partition "Carrito" {
+    :Agregar producto al carrito;
+    :Ver carrito;
+}
+
+partition "Proceso de Compra" {
+    :Realizar compra;
+    :Seleccionar método de pago;
+
+    if (¿Pago exitoso?) then (sí)
+        :Enviar confirmación de pedido;
+        :Actualizar inventario;
+    else (no)
+        :Mostrar error de pago;
+        :Reintentar pago;
+        if (¿Reintentar pago?) then (sí)
+            :Seleccionar método de pago;
+        else (no)
+            :Cancelar compra;
+        endif
+    endif
+}
+
+:Salir del sistema;
+stop
+@enduml
