@@ -1,0 +1,30 @@
+@startuml
+title Diagrama de Tiempo - Cambios de Estado en el Carrito de Compras
+
+participant Usuario
+participant Carrito
+participant Producto
+participant Orden
+
+Usuario -> Carrito: "Iniciar sesión"
+Carrito -> Usuario: "Estado: Autenticado"
+
+alt Producto disponible
+    Producto -> Carrito: "Agregar Producto"
+    Carrito -> Producto: "Estado: Agregado al Carrito"
+else Producto no disponible
+    Producto -> Carrito: "No disponible"
+end
+
+Carrito -> Orden: "Crear orden"
+Orden -> Carrito: "Estado: En proceso de pago"
+
+Carrito -> Orden: "Confirmar pago"
+Orden -> Carrito: "Estado: Pagada"
+Carrito -> Producto: "Estado: Sin stock"
+
+Orden -> Usuario: "Enviar orden"
+Usuario -> Orden: "Recibir orden"
+Orden -> Usuario: "Estado: Entregada"
+
+@enduml
