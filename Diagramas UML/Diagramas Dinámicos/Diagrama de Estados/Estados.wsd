@@ -1,0 +1,18 @@
+@startuml
+[*] --> Estado_Inicial
+
+Estado_Inicial --> Estado_Producto_Disponible : "Producto agregado"
+Estado_Producto_Disponible --> Estado_Producto_Sin_Disponibilidad : "Sin stock"
+Estado_Producto_Sin_Disponibilidad --> Estado_Producto_Disponible : "Producto reabastecido"
+
+Estado_Producto_Disponible --> Estado_Producto_Agregado_Carrito : "Agregar al carrito"
+Estado_Producto_Agregado_Carrito --> Estado_Producto_Disponible : "Eliminar del carrito"
+Estado_Producto_Agregado_Carrito --> Estado_Orden_Realizada : "Proceder a compra"
+
+Estado_Orden_Realizada --> Estado_Orden_Pagada : "Pago exitoso"
+Estado_Orden_Pagada --> Estado_Orden_Enviado : "Enviar pedido"
+Estado_Orden_Enviado --> [*] : "Entrega completada"
+
+Estado_Orden_Realizada --> Estado_Orden_Cancelada : "Cancelar orden"
+Estado_Orden_Cancelada --> [*] : "Orden cancelada"
+@enduml
