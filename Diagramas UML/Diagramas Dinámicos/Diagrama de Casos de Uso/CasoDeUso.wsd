@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+
+actor Usuario
+actor Administrador
+
+rectangle "Sistema de Carrito de Compras" {
+    Usuario --> (Iniciar Sesión)
+    Usuario --> (Buscar Producto)
+    Usuario --> (Agregar Producto al Carrito)
+    Usuario --> (Ver Carrito)
+    Usuario --> (Eliminar Producto del Carrito)
+    Usuario --> (Proceder a la Compra)
+    Usuario --> (Seleccionar Método de Pago)
+    Usuario --> (Recibir Confirmación de Pedido)
+
+    Administrador --> (Agregar Producto)
+    Administrador --> (Actualizar Inventario)
+    Administrador --> (Ver Informes de Ventas)
+}
+
+@enduml
