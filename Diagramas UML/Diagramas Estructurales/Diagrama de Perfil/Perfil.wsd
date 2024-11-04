@@ -1,0 +1,37 @@
+@startuml
+title Diagrama de Perfil - Carrito de Compras
+
+package "Perfil de Carrito de Compras" <<profile>> {
+    class "Producto" <<<<CarritoDeCompras>>>> {
+        + nombre: String
+        + precio: Double
+    }
+
+    class "Usuario" <<<<CarritoDeCompras>>>> {
+        + nombre: String
+        + email: String
+    }
+
+    class "Orden" <<<<CarritoDeCompras>>>> {
+        + fecha: Date
+        + total: Double
+    }
+
+    class "AgregarProducto" <<<<Operaciones>>>> {
+        + agregar(producto: Producto): void
+    }
+
+    class "EliminarProducto" <<<<Operaciones>>>> {
+        + eliminar(producto: Producto): void
+    }
+
+    class "ProcesarPago" <<<<Operaciones>>>> {
+        + procesar(pago: Double): void
+    }
+
+    class "VerOrden" <<<<Operaciones>>>> {
+        + mostrarDetalles(): void
+    }
+}
+
+@enduml
