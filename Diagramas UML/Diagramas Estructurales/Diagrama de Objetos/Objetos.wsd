@@ -1,0 +1,44 @@
+@startuml
+title Diagrama de Objetos - Instancias en el Carrito de Compras
+
+object Usuario1 {
+    id = 1
+    nombre = "Juan Pérez"
+    email = "juan.perez@example.com"
+    contraseña = "1234"
+}
+
+object Producto1 {
+    id = 101
+    nombre = "Laptop"
+    precio = 1200.00
+    stock = 5
+}
+
+object Producto2 {
+    id = 102
+    nombre = "Ratón"
+    precio = 25.00
+    stock = 10
+}
+
+object Carrito1 {
+    id = 201
+    productos = [Producto1, Producto2]
+}
+
+object Orden1 {
+    id = 301
+    usuario = Usuario1
+    productos = [Producto1, Producto2]
+    total = 1225.00
+}
+
+Usuario1 -- Carrito1 : tiene >
+Carrito1 -- Producto1 : contiene >
+Carrito1 -- Producto2 : contiene >
+Orden1 -- Usuario1 : realizada por >
+Orden1 -- Producto1 : incluye >
+Orden1 -- Producto2 : incluye >
+
+@enduml
