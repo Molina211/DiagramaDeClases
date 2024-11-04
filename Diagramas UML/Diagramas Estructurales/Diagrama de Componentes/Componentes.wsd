@@ -1,0 +1,24 @@
+@startuml
+title Diagrama de Componentes - Carrito de Compras
+
+package "Sistema de Carrito de Compras" {
+    [Frontend] <<component>> 
+    [Backend] <<component>> 
+    [Base de Datos] <<component>> 
+
+    [Frontend] --> [Backend] : solicita datos
+    [Backend] --> [Base de Datos] : consulta datos
+
+    [Backend] --> [Biblioteca de Autenticación] <<component>> : utiliza
+    [Backend] --> [Biblioteca de Procesamiento de Pagos] <<component>> : utiliza
+
+    [Biblioteca de Autenticación] --> [API de Autenticación] : comunica
+    [Biblioteca de Procesamiento de Pagos] --> [API de Pagos] : comunica
+}
+
+package "Bibliotecas Externas" {
+    [API de Autenticación] <<component>>
+    [API de Pagos] <<component>>
+}
+
+@enduml
