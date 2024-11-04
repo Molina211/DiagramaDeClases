@@ -1,0 +1,44 @@
+@startuml
+title Diagrama de Clases - Carrito de Compras
+
+class Usuario {
+    +id: int
+    +nombre: String
+    +email: String
+    +contraseña: String
+    +iniciarSesion(): boolean
+    +cerrarSesion(): void
+}
+
+class Producto {
+    +id: int
+    +nombre: String
+    +precio: double
+    +stock: int
+    +disponibilidad(): boolean
+    +actualizarStock(cantidad: int): void
+}
+
+class Carrito {
+    +id: int
+    +productos: List<Producto>
+    +agregarProducto(p: Producto): void
+    +eliminarProducto(p: Producto): void
+    +calcularTotal(): double
+}
+
+class Orden {
+    +id: int
+    +usuario: Usuario
+    +productos: List<Producto>
+    +total: double
+    +crearOrden(): void
+    +procesarPago(): boolean
+}
+
+Usuario "1" -- "0..*" Carrito : tiene >
+Carrito "1" -- "0..*" Producto : contiene >
+Orden "1" -- "1" Usuario : realiza >
+Orden "1" -- "0..*" Producto : incluye >
+
+@enduml
